@@ -3,6 +3,7 @@ package org.ccguyka.syzygie.assertions;
 import org.assertj.core.api.Assertions;
 import org.ccguyka.syzygie.Player;
 import org.ccguyka.syzygie.PlayerColor;
+import org.ccguyka.syzygie.Race;
 
 public class PlayerAssert {
 
@@ -24,6 +25,12 @@ public class PlayerAssert {
 
     public PlayerAssert hasColor(PlayerColor color) {
         Assertions.assertThat(actual.getColor()).isEqualTo(color);
+
+        return this;
+    }
+
+    public PlayerAssert hasRace(Race race) {
+        Assertions.assertThat(actual.getRace()).isEqualTo(race);
 
         return this;
     }

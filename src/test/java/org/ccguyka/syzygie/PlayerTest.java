@@ -1,6 +1,7 @@
 package org.ccguyka.syzygie;
 
 import static org.ccguyka.syzygie.PlayerColor.RED;
+import static org.ccguyka.syzygie.Race.HUMAN;
 import static org.ccguyka.syzygie.assertions.PlayerAssert.assertThat;
 
 import org.junit.Test;
@@ -11,10 +12,11 @@ public class PlayerTest {
 
     @Test
     public void verifyPlayerInitialState() throws Exception {
-        Player player = new Player(JOHN, RED);
+        Player player = new Player(JOHN, RED, HUMAN);
 
         assertThat(player)
                 .hasName(JOHN)
-                .hasColor(RED);
+                .hasColor(RED)
+                .hasRace(HUMAN);
     }
 }
