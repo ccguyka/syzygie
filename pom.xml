@@ -8,7 +8,24 @@
   <packaging>jar</packaging>
 
   <name>syzygie</name>
-  <url>http://maven.apache.org</url>
+  <description>Implementation of the eclipse board game</description>
+  <url>https://github.com/ccguyka/syzygie</url>
+
+  <issueManagement>
+    <url>https://github.com/ccguyka/syzygie/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <scm>
+    <url>https://github.com/ccguyka/syzygie</url>
+    <connection>scm:git:git://github.com/ccguyka/syzygie.git</connection>
+    <developerConnection>scm:git:git@github.com/ccguyka/syzygie.git</developerConnection>
+  </scm>
+
+  <ciManagement>
+    <system>travis</system>
+    <url>https://travis-ci.org/ccguyka/syzygie</url>
+  </ciManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
