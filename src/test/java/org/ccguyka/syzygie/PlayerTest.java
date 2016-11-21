@@ -6,6 +6,9 @@ import static org.ccguyka.syzygie.assertions.PlayerAssert.assertThat;
 
 import org.junit.Test;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
+
 public class PlayerTest {
 
     private static final String JOHN = "John";
@@ -18,5 +21,12 @@ public class PlayerTest {
                 .hasName(JOHN)
                 .hasColor(RED)
                 .hasRace(HUMAN);
+    }
+
+    @Test
+    public void equalsContract() {
+        EqualsVerifier.forClass(Player.class)
+                .suppress(Warning.STRICT_INHERITANCE)
+                .verify();
     }
 }
