@@ -20,8 +20,8 @@ public class GameAssert {
         return this;
     }
 
-    public GameAssert hasPlayers(int number) {
-        Assertions.assertThat(actual.getPlayers()).hasSize(number);
+    public GameAssert hasPlayers(Player... players) {
+        Assertions.assertThat(actual.getPlayers()).contains(players);
 
         return this;
     }
