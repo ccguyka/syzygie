@@ -14,7 +14,16 @@ public class Game {
     }
 
     public void add(Player player) {
+        checkColorIsUsedOnlyOnce(player);
         players.add(player);
+    }
+
+    private void checkColorIsUsedOnlyOnce(Player player) {
+        for (Player existingPlayer : players) {
+            if (existingPlayer.getColor().equals(player.getColor())) {
+                throw new IllegalArgumentException("Color " + player.getColor() + " already used by another player");
+            }
+        }
     }
 
     public List<Player> getPlayers() {
