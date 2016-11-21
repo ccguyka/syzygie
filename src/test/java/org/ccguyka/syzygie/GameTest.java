@@ -19,8 +19,8 @@ public class GameTest {
     public void verifyTwoPlayerGame() throws Exception {
         Game game = new Game();
 
-        game.add(new Player());
-        game.add(new Player());
+        game.add(new Player("John"));
+        game.add(new Player("Jane"));
 
         assertThat(game)
             .hasPlayers(2);
