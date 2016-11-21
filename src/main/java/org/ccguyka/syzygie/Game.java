@@ -7,6 +7,8 @@ import java.util.List;
 
 public class Game {
 
+    private static final int INITIAL_ROUND = 0;
+
     private final List<Player> players = new ArrayList<>();
 
     public boolean hasPlayers() {
@@ -31,6 +33,6 @@ public class Game {
     }
 
     public int round() {
-        return 0;
+        return INITIAL_ROUND;
     }
 }
