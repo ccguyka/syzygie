@@ -14,4 +14,16 @@ public class GameTest {
             .hasNoPlayers()
             .isInRound(0);
     }
+
+    @Test
+    public void verifyTwoPlayerGame() throws Exception {
+        Game game = new Game();
+
+        game.add(new Player());
+        game.add(new Player());
+
+        assertThat(game)
+            .hasPlayers(2);
+    }
+
 }

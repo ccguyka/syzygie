@@ -20,6 +20,12 @@ public class GameAssert {
         return this;
     }
 
+    public GameAssert hasPlayers(int number) {
+        Assertions.assertThat(actual.getPlayers()).hasSize(number);
+
+        return this;
+    }
+
     public GameAssert isInRound(int round) {
         Assertions.assertThat(actual.round()).isEqualTo(round);
 
