@@ -1,12 +1,21 @@
 language: java
-sudo: false
 
 jdk:
-  - oraclejdk8
+- oraclejdk8
 
-script: 
-  mvn clean verify
+cache:
+  directories:
+    – $HOME/.m2
+    – $HOME/.sonar/cache
 
+addons:
+  sonarqube: true
+env:
+  global:
+    secure: eWGwwo29ahyzGIqEvXWDIqUNM1D2SRkwevjsssMd8XZwZERMuVPl6KTP4Tvb5OLWFr7+8gViUUfNXCjo6RaCVu/KF6WJiH556XzjPHa2c2ZFkFeP99gmAGGV+ZkmSP0oj47hqCY45dIi1h3bUy6NDx9xw8MkmEz2z5PRyjubrcVrnD07ie7MugDNkBDKDlzTkfJ/6LHly/WKkORBSHM2ZewV7iLKFBqCZYztOfaAwYMkn7NI0E8XZhz+Ag5Q2Sp8BOrJ2VbPgQbvoJjNPaA4OkTdT3VyvC283IeIZcgRXAkpNQdILgnP29MLYP++qJoU49Trm7A4yYGktJ56pYuXdoHNDyeFzourCRV4Sx3QVDmAmOqVvjJbk2bV7wqP96eiMkNw81o+/TLVUWH4AnY+t9xfa9NXC/853LzHxqRvCFkcUa+mkZ3sbWQ4kchd/b0YoGnAFdx4BcVn4CzjdTi0hDS3VD/9dH+wP8+QzwhEvVyWziwui97588jA6//x0PkFiF22UVJGMSsQIlQXv1MECHS/VwNLfoCSynVqzjstKdrkgwl9eqSAjSUzFQ2EcmsFYhUH1kG9649W733fm7boCUPWTwuBwivfYBEiaOnXzbpwVqiNlVfjb3NclaDwHnMa7MGgnIBsegB5V8BWxFIC6svPgtQ6YafTzfuF68kPG5w=
+
+script:
+  - mvn clean verify
 after_success:
-  - mvn clean test jacoco:report coveralls:report
+  - mvn test jacoco:report coveralls:report sonar:sonar -Dsonar.host.url=https:/sonarqube.com -Dsonar.login=$SONAR_TOKEN
 after_failure:
