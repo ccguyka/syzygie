@@ -1,6 +1,8 @@
-package org.ccguyka.syzygie;
+package org.ccguyka.syzygie.assertions;
 
 import org.assertj.core.api.Assertions;
+import org.ccguyka.syzygie.Game;
+import org.ccguyka.syzygie.Player;
 
 public class GameAssert {
 

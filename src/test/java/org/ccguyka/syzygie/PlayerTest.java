@@ -1,7 +1,7 @@
 package org.ccguyka.syzygie;
 
-import static org.ccguyka.syzygie.PlayerAssert.assertThat;
 import static org.ccguyka.syzygie.PlayerColor.RED;
+import static org.ccguyka.syzygie.assertions.PlayerAssert.assertThat;
 
 import org.junit.Test;
 
